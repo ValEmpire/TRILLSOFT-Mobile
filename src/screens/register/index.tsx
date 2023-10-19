@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../../components/Layout';
-import {Image} from 'react-native';
+import {Image, ScrollView} from 'react-native';
 import {loginLogoImage} from '../../images';
 import Text from '../../components/Text';
 import Box from '../../components/Box';
@@ -13,39 +13,45 @@ const RegisterScreen = () => {
     <DismissKeyboard>
       <Layout>
         <AppBar title="Register" />
-        <Box
-          flex={1}
-          display="flex"
-          justifyContent="center"
-          alignItems="center">
-          <Box>
-            <Box mb={20}>
-              <Image
-                style={{height: 250, width: 240}}
-                source={loginLogoImage}
-              />
-            </Box>
-
-            <Box mb={5}>
-              <Text variant="headlineSmall">Register</Text>
-            </Box>
-
+        <ScrollView>
+          <Box
+            flex={1}
+            display="flex"
+            justifyContent="center"
+            alignItems="center">
             <Box>
-              <TextInput label="Email" mode="outlined" />
-              <TextInput label="Username" mode="outlined" />
-              <TextInput label="Password" mode="outlined" />
-              <TextInput label="Repeat password" mode="outlined" />
-            </Box>
+              <Box mb={20}>
+                <Image
+                  style={{height: 250, width: 240}}
+                  source={loginLogoImage}
+                />
+              </Box>
 
-            <Box mt={10} />
+              <Box mb={5}>
+                <Text variant="headlineSmall">Register</Text>
+              </Box>
 
-            <Box mt={10}>
-              <Button theme={{roundness: 1}} mode="contained">
-                Register
-              </Button>
+              <Box>
+                <TextInput label="Email" mode="outlined" />
+                <TextInput label="Username" mode="outlined" />
+                <TextInput label="Password" mode="outlined" />
+                <TextInput label="Repeat password" mode="outlined" />
+              </Box>
+
+              <Box mt={10} />
+
+              <Box mt={10}>
+                <Button theme={{roundness: 1}} mode="contained">
+                  Register
+                </Button>
+              </Box>
             </Box>
           </Box>
-        </Box>
+          <Text>1</Text>
+          <Text>1</Text>
+          <Text>1</Text>
+          <Text>1</Text>
+        </ScrollView>
       </Layout>
     </DismissKeyboard>
   );

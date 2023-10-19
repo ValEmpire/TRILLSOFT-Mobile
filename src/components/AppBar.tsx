@@ -11,7 +11,7 @@ const AppBar: React.FC<AppBarProps> = ({title, showMenu}) => {
   const {navigatePop} = useAppNavigation();
 
   return (
-    <Appbar elevated>
+    <Appbar elevated mode="small">
       <Appbar.BackAction onPress={() => navigatePop()} />
       <Appbar.Content title={title} />
       {showMenu && <Appbar.Action icon="dots-vertical" onPress={() => {}} />}
