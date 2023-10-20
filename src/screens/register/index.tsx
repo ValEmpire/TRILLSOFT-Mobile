@@ -13,45 +13,37 @@ const RegisterScreen = () => {
     <DismissKeyboard>
       <Layout>
         <AppBar title="Register" />
-        <ScrollView>
-          <Box
-            flex={1}
-            display="flex"
-            justifyContent="center"
-            alignItems="center">
+        <Box
+          flex={1}
+          display="flex"
+          justifyContent="center"
+          alignItems="center">
+          <Box>
+            <Box mb={20}>
+              <Image
+                style={{height: 250, width: 240}}
+                source={loginLogoImage}
+              />
+            </Box>
+
+            <Box mb={5} />
+
             <Box>
-              <Box mb={20}>
-                <Image
-                  style={{height: 250, width: 240}}
-                  source={loginLogoImage}
-                />
-              </Box>
+              <TextInput label="Email" mode="outlined" />
+              <TextInput label="Username" mode="outlined" />
+              <TextInput label="Password" mode="outlined" />
+              <TextInput label="Repeat password" mode="outlined" />
+            </Box>
 
-              <Box mb={5}>
-                <Text variant="headlineSmall">Register</Text>
-              </Box>
+            <Box mt={10} />
 
-              <Box>
-                <TextInput label="Email" mode="outlined" />
-                <TextInput label="Username" mode="outlined" />
-                <TextInput label="Password" mode="outlined" />
-                <TextInput label="Repeat password" mode="outlined" />
-              </Box>
-
-              <Box mt={10} />
-
-              <Box mt={10}>
-                <Button theme={{roundness: 1}} mode="contained">
-                  Register
-                </Button>
-              </Box>
+            <Box mt={10}>
+              <Button theme={{roundness: 1}} mode="contained">
+                Register
+              </Button>
             </Box>
           </Box>
-          <Text>1</Text>
-          <Text>1</Text>
-          <Text>1</Text>
-          <Text>1</Text>
-        </ScrollView>
+        </Box>
       </Layout>
     </DismissKeyboard>
   );

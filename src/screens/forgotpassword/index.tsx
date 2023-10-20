@@ -26,9 +26,7 @@ const ForgotPasswordScreen = () => {
               />
             </Box>
 
-            <Box mb={5}>
-              <Text variant="headlineSmall">Forgot password</Text>
-            </Box>
+            <Box mb={5} />
 
             <Box>
               <TextInput label="Username" mode="outlined" />
