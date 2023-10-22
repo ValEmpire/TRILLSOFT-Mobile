@@ -1,51 +1,42 @@
 import React from 'react';
-import Layout from '../../components/Layout';
-import {Image} from 'react-native';
+import {Image, KeyboardAvoidingView, ScrollView} from 'react-native';
 import {loginLogoImage} from '../../images';
-import Text from '../../components/Text';
 import Box from '../../components/Box';
 import {Button, TextInput} from 'react-native-paper';
-import DismissKeyboard from '../../components/DismissKeyboard';
 import AppBar from '../../components/AppBar';
+import Layout from '../../components/LayoutWrapper';
+import TextInputAvoidingView from '../../components/TextAvoidingView';
 
 const ForgotPasswordScreen = () => {
   return (
-    <DismissKeyboard>
-      <Layout>
-        <AppBar title="Forgot Password" />
-        <Box
-          flex={1}
-          display="flex"
-          justifyContent="center"
-          alignItems="center">
+    <TextInputAvoidingView>
+      <AppBar title="Forgot Password" />
+
+      <Layout centerContent={true}>
+        <Box width={270} alignSelf="center">
+          <Box mb={20}>
+            <Image style={{height: 285, width: 270}} source={loginLogoImage} />
+          </Box>
+
+          <Box mb={5} />
+
           <Box>
-            <Box mb={20}>
-              <Image
-                style={{height: 250, width: 240}}
-                source={loginLogoImage}
-              />
-            </Box>
+            <TextInput label="Username" mode="outlined" />
+            <TextInput label="Resetcode" mode="outlined" />
+            <TextInput label="New Password" mode="outlined" />
+            <TextInput label="Repeat new password" mode="outlined" />
+          </Box>
 
-            <Box mb={5} />
+          <Box mt={10} />
 
-            <Box>
-              <TextInput label="Username" mode="outlined" />
-              <TextInput label="Resetcode" mode="outlined" />
-              <TextInput label="New Password" mode="outlined" />
-              <TextInput label="Repeat new password" mode="outlined" />
-            </Box>
-
-            <Box mt={10} />
-
-            <Box mt={10}>
-              <Button theme={{roundness: 1}} mode="contained">
-                Reset Password
-              </Button>
-            </Box>
+          <Box mt={10}>
+            <Button theme={{roundness: 1}} mode="contained">
+              Reset Password
+            </Button>
           </Box>
         </Box>
       </Layout>
-    </DismissKeyboard>
+    </TextInputAvoidingView>
   );
 };
 

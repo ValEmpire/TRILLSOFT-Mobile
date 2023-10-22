@@ -1,27 +1,27 @@
 import React from 'react';
-import Layout from '../../components/Layout';
-import {Image, TouchableOpacity} from 'react-native';
+import {
+  Image,
+  KeyboardAvoidingView,
+  ScrollView,
+  TouchableOpacity,
+} from 'react-native';
 import {loginLogoImage} from '../../images';
 import Text from '../../components/Text';
 import Box from '../../components/Box';
 import {Button, TextInput} from 'react-native-paper';
-import DismissKeyboard from '../../components/DismissKeyboard';
 import {useAppNavigation} from '../../util';
+import Layout from '../../components/LayoutWrapper';
+import TextInputAvoidingView from '../../components/TextAvoidingView';
 
 const LoginScreen = () => {
   const {navigate} = useAppNavigation();
 
   return (
-    <DismissKeyboard>
-      <Layout
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}>
-        <Box>
+    <TextInputAvoidingView>
+      <Layout centerContent={true}>
+        <Box width={270} alignSelf="center">
           <Box mb={20}>
-            <Image style={{height: 250, width: 240}} source={loginLogoImage} />
+            <Image style={{height: 285, width: 270}} source={loginLogoImage} />
           </Box>
 
           <Box mb={5}>
@@ -40,17 +40,21 @@ const LoginScreen = () => {
             justifyContent="space-between">
             <Box>
               <TouchableOpacity onPress={() => navigate('register.screen')}>
-                <Text variant="labelSmall" primary>
-                  Need to register?
-                </Text>
+                <Box pt={3} pb={3}>
+                  <Text variant="labelSmall" primary>
+                    Need to register?
+                  </Text>
+                </Box>
               </TouchableOpacity>
             </Box>
             <Box>
               <TouchableOpacity
                 onPress={() => navigate('forgotpassword.screen')}>
-                <Text variant="labelSmall" primary>
-                  Forgot password?
-                </Text>
+                <Box pt={3} pb={3}>
+                  <Text variant="labelSmall" primary>
+                    Forgot password?
+                  </Text>
+                </Box>
               </TouchableOpacity>
             </Box>
           </Box>
@@ -62,7 +66,7 @@ const LoginScreen = () => {
           </Box>
         </Box>
       </Layout>
-    </DismissKeyboard>
+    </TextInputAvoidingView>
   );
 };
 

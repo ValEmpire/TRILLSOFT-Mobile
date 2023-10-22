@@ -2,7 +2,6 @@ import React from 'react';
 import Layout from '../../components/Layout';
 import {Image, ScrollView} from 'react-native';
 import {loginLogoImage} from '../../images';
-import Text from '../../components/Text';
 import Box from '../../components/Box';
 import {Button, TextInput} from 'react-native-paper';
 import DismissKeyboard from '../../components/DismissKeyboard';

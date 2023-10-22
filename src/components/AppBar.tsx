@@ -12,11 +12,11 @@ const AppBar: React.FC<AppBarProps> = ({title, showMenu}) => {
   const {navigatePop} = useAppNavigation();
 
   return (
-    <Appbar elevated mode="center-aligned" style={style.appbar}>
+    <Appbar.Header elevated mode="center-aligned" style={style.appbar}>
       <Appbar.BackAction onPress={() => navigatePop()} />
       <Appbar.Content title={title} />
       {showMenu && <Appbar.Action icon="dots-vertical" onPress={() => {}} />}
-    </Appbar>
+    </Appbar.Header>
   );
 };
 

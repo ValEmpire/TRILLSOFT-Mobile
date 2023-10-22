@@ -20,7 +20,7 @@ const AuthRoute = () => {
         cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
       }}>
       <Stack.Screen name="login.screen" component={LoginScreen} />
-      <Stack.Screen name="register.screen" component={RegisterScreen} />
+      {/* <Stack.Screen name="register.screen" component={RegisterScreen} />*/}
       <Stack.Screen
         name="forgotpassword.screen"
         component={ForgotPasswordScreen}

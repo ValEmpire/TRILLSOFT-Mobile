@@ -31,6 +31,14 @@ interface BoxProps extends ViewProps {
   alignItems?: FlexAlignType;
   width?: number;
   flex?: number;
+  height?: number;
+  alignSelf?:
+    | 'auto'
+    | 'baseline'
+    | 'center'
+    | 'flex-end'
+    | 'flex-start'
+    | 'stretch';
 }
 
 const Box: React.FC<BoxProps> = props => {
@@ -60,6 +68,8 @@ const style = (props: BoxProps) => {
       justifyContent: props.justifyContent,
       width: props.width,
       flex: props.flex,
+      height: props.height,
+      alignSelf: props.alignSelf,
     },
   });
 };
