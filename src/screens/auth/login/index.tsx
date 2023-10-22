@@ -1,17 +1,12 @@
 import React from 'react';
-import {
-  Image,
-  KeyboardAvoidingView,
-  ScrollView,
-  TouchableOpacity,
-} from 'react-native';
-import {loginLogoImage} from '../../images';
-import Text from '../../components/Text';
-import Box from '../../components/Box';
+import {TouchableOpacity} from 'react-native';
+import Text from '../../../appcomponents/Text';
+import Box from '../../../appcomponents/Box';
 import {Button, TextInput} from 'react-native-paper';
-import {useAppNavigation} from '../../util';
-import Layout from '../../components/LayoutWrapper';
-import TextInputAvoidingView from '../../components/TextAvoidingView';
+import {useAppNavigation} from '../../../util';
+import Layout from '../../../appcomponents/LayoutWrapper';
+import TextInputAvoidingView from '../../../appcomponents/TextAvoidingView';
+import AuthLogo from '../components/AuthLogo';
 
 const LoginScreen = () => {
   const {navigate} = useAppNavigation();
@@ -20,9 +15,7 @@ const LoginScreen = () => {
     <TextInputAvoidingView>
       <Layout centerContent={true}>
         <Box width={270} alignSelf="center">
-          <Box mb={20}>
-            <Image style={{height: 285, width: 270}} source={loginLogoImage} />
-          </Box>
+          <AuthLogo />
 
           <Box mb={5}>
             <Text variant="headlineSmall">Please sign in</Text>

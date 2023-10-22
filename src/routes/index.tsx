@@ -16,7 +16,7 @@ const Routes: React.FC<NavigatorIndexProps> = ({token}) => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName={token ? 'app.route' : 'auth.route'}
+        initialRouteName={token ? 'app.secured' : 'auth.route'}
         screenOptions={{
           headerShown: false,
           gestureEnabled: true,

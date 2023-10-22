@@ -1,11 +1,10 @@
 import React from 'react';
-import {Image, KeyboardAvoidingView, ScrollView} from 'react-native';
-import {loginLogoImage} from '../../images';
-import Box from '../../components/Box';
+import Box from '../../../appcomponents/Box';
 import {Button, TextInput} from 'react-native-paper';
-import AppBar from '../../components/AppBar';
-import Layout from '../../components/LayoutWrapper';
-import TextInputAvoidingView from '../../components/TextAvoidingView';
+import AppBar from '../../../appcomponents/AppBar';
+import Layout from '../../../appcomponents/LayoutWrapper';
+import TextInputAvoidingView from '../../../appcomponents/TextAvoidingView';
+import AuthLogo from '../components/AuthLogo';
 
 const ForgotPasswordScreen = () => {
   return (
@@ -14,9 +13,7 @@ const ForgotPasswordScreen = () => {
 
       <Layout centerContent={true}>
         <Box width={270} alignSelf="center">
-          <Box mb={20}>
-            <Image style={{height: 285, width: 270}} source={loginLogoImage} />
-          </Box>
+          <AuthLogo />
 
           <Box mb={5} />
 

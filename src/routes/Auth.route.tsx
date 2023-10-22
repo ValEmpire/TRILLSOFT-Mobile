@@ -3,9 +3,9 @@ import {
   CardStyleInterpolators,
   createStackNavigator,
 } from '@react-navigation/stack';
-import LoginScreen from '../screens/login';
-import RegisterScreen from '../screens/register';
-import ForgotPasswordScreen from '../screens/forgotpassword';
+import LoginScreen from '../screens/auth/login';
+import RegisterScreen from '../screens/auth/register';
+import ForgotPasswordScreen from '../screens/auth/forgotpassword';
 
 const AuthRoute = () => {
   const Stack = createStackNavigator();
@@ -20,7 +20,7 @@ const AuthRoute = () => {
         cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
       }}>
       <Stack.Screen name="login.screen" component={LoginScreen} />
-      {/* <Stack.Screen name="register.screen" component={RegisterScreen} />*/}
+      <Stack.Screen name="register.screen" component={RegisterScreen} />
       <Stack.Screen
         name="forgotpassword.screen"
         component={ForgotPasswordScreen}
