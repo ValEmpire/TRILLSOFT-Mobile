@@ -1,10 +1,10 @@
 import React from 'react';
-import Box from '../../../appcomponents/Box';
+import Box from '../../../components/Box';
 import {Button, TextInput} from 'react-native-paper';
-import AppBar from '../../../appcomponents/AppBar';
-import Layout from '../../../appcomponents/LayoutWrapper';
-import TextInputAvoidingView from '../../../appcomponents/TextAvoidingView';
-import AuthLogo from '../../../appcomponents/AuthLogo';
+import AppBar from '../../../components/AppBar';
+import Layout from '../../../components/LayoutWrapper';
+import TextInputAvoidingView from '../../../components/TextAvoidingView';
+import AuthLogo from '../../../components/AuthLogo';
 
 const RegisterScreen = () => {
   return (

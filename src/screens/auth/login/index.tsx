@@ -1,12 +1,12 @@
 import React from 'react';
 import {TouchableOpacity} from 'react-native';
-import Text from '../../../appcomponents/Text';
-import Box from '../../../appcomponents/Box';
+import Text from '../../../components/Text';
+import Box from '../../../components/Box';
 import {Button, TextInput} from 'react-native-paper';
 import {useAppNavigation} from '../../../util';
-import Layout from '../../../appcomponents/LayoutWrapper';
-import TextInputAvoidingView from '../../../appcomponents/TextAvoidingView';
-import AuthLogo from '../../../appcomponents/AuthLogo';
+import Layout from '../../../components/LayoutWrapper';
+import TextInputAvoidingView from '../../../components/TextAvoidingView';
+import AuthLogo from '../../../components/AuthLogo';
 
 const LoginScreen = () => {
   const {navigate} = useAppNavigation();
