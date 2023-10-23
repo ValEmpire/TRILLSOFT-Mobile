@@ -53,7 +53,10 @@ const LoginScreen = () => {
           </Box>
 
           <Box mt={10}>
-            <Button theme={{roundness: 1}} mode="contained">
+            <Button
+              theme={{roundness: 1}}
+              mode="contained"
+              onPress={() => console.log('logging in')}>
               Login
             </Button>
           </Box>

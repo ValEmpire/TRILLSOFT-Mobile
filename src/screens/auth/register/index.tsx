@@ -9,7 +9,7 @@ import AuthLogo from '../../../components/AuthLogo';
 const RegisterScreen = () => {
   return (
     <TextInputAvoidingView>
-      <AppBar title="Forgot Password" />
+      <AppBar title="Register" />
 
       <Layout centerContent={true}>
         <Box width={270} alignSelf="center">
