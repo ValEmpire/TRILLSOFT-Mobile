@@ -6,7 +6,7 @@ import {Button, TextInput} from 'react-native-paper';
 import {useAppNavigation} from '../../../util';
 import Layout from '../../../appcomponents/LayoutWrapper';
 import TextInputAvoidingView from '../../../appcomponents/TextAvoidingView';
-import AuthLogo from '../components/AuthLogo';
+import AuthLogo from '../../../appcomponents/AuthLogo';
 
 const LoginScreen = () => {
   const {navigate} = useAppNavigation();

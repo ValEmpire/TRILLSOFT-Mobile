@@ -32,7 +32,7 @@ const Main: React.FC<MainProps> = ({children}) => {
     });
   }, [dispatch]);
 
-  const paperTheme = !isDarkMode
+  const paperTheme = isDarkMode
     ? {...MD3DarkTheme, colors: colors.darkTheme}
     : {...MD3LightTheme, colors: colors.lightTheme};
 

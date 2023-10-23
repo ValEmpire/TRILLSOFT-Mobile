@@ -4,7 +4,7 @@ import {Button, TextInput} from 'react-native-paper';
 import AppBar from '../../../appcomponents/AppBar';
 import Layout from '../../../appcomponents/LayoutWrapper';
 import TextInputAvoidingView from '../../../appcomponents/TextAvoidingView';
-import AuthLogo from '../components/AuthLogo';
+import AuthLogo from '../../../appcomponents/AuthLogo';
 
 const RegisterScreen = () => {
   return (
