@@ -4,7 +4,8 @@ import {
   createStackNavigator,
 } from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
-import AuthNavigator from './Auth.route';
+import AuthRoutes from './Auth.routes';
+import AppRoutes from './App.routes';
 
 const Stack = createStackNavigator();
 
@@ -16,14 +17,15 @@ const Routes: React.FC<NavigatorIndexProps> = ({token}) => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName={token ? 'app.secured' : 'auth.route'}
+        initialRouteName={token ? 'app.routes' : 'auth.routes'}
         screenOptions={{
           headerShown: false,
           gestureEnabled: true,
           gestureDirection: 'horizontal',
           cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
         }}>
-        <Stack.Screen name="auth.route" component={AuthNavigator} />
+        <Stack.Screen name="auth.routes" component={AuthRoutes} />
+        <Stack.Screen name="app.routes" component={AppRoutes} />
       </Stack.Navigator>
     </NavigationContainer>
   );

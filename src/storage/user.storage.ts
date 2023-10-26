@@ -4,18 +4,17 @@ import {STORAGE_SECRET} from '@env';
 // create moreStorage
 const userStorage = new MMKV({
   id: `user-storage`,
-  path: '/',
   encryptionKey: STORAGE_SECRET,
 });
 
-export interface userData {
+export interface UserDataProps {
   id: number;
   userName: string;
   email: string;
   token: string;
 }
 
-export const getUserData = (): userData | undefined => {
+export const getUserData = (): UserDataProps | undefined => {
   const userData = userStorage.getString('user');
 
   if (userData) {
@@ -25,7 +24,7 @@ export const getUserData = (): userData | undefined => {
   return undefined;
 };
 
-export const setUserData = (data: userData): void => {
+export const setUserData = (data: UserDataProps): void => {
   const stringData = JSON.stringify(data);
 
   userStorage.set('user', stringData);

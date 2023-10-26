@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {TouchableOpacity} from 'react-native';
 import Text from '../../../components/Text';
 import Box from '../../../components/Box';
@@ -7,9 +7,32 @@ import {useAppNavigation} from '../../../util';
 import Layout from '../../../components/LayoutWrapper';
 import TextInputAvoidingView from '../../../components/TextAvoidingView';
 import AuthLogo from '../../../components/AuthLogo';
+import {useAppDispatch} from '../../../redux/appHooks';
+import {loginUser} from '../../../redux/actions/user.action';
 
 const LoginScreen = () => {
-  const {navigate} = useAppNavigation();
+  const [userName, setUserName] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const dispatch = useAppDispatch();
+  const {navigate, navigateReplace} = useAppNavigation();
+
+  const handleLogin = () => {
+    dispatch(
+      loginUser(
+        {
+          userName,
+          password,
+        },
+        (success: boolean) => {
+          if (success) {
+            navigateReplace('app.routes', {
+              screen: 'app.home.screen.',
+            });
+          }
+        },
+      ),
+    );
+  };
 
   return (
     <TextInputAvoidingView>
@@ -22,8 +45,16 @@ const LoginScreen = () => {
           </Box>
 
           <Box>
-            <TextInput label="Username" mode="outlined" />
-            <TextInput label="Password" mode="outlined" />
+            <TextInput
+              label="Username"
+              mode="outlined"
+              onChangeText={setUserName}
+            />
+            <TextInput
+              label="Password"
+              mode="outlined"
+              onChangeText={setPassword}
+            />
           </Box>
 
           <Box
@@ -32,7 +63,8 @@ const LoginScreen = () => {
             flexDirection="row"
             justifyContent="space-between">
             <Box>
-              <TouchableOpacity onPress={() => navigate('register.screen')}>
+              <TouchableOpacity
+                onPress={() => navigate('auth.register.screen')}>
                 <Box pt={3} pb={3}>
                   <Text variant="labelSmall" primary>
                     Need to register?
@@ -42,7 +74,7 @@ const LoginScreen = () => {
             </Box>
             <Box>
               <TouchableOpacity
-                onPress={() => navigate('forgotpassword.screen')}>
+                onPress={() => navigate('auth.forgotpassword.screen')}>
                 <Box pt={3} pb={3}>
                   <Text variant="labelSmall" primary>
                     Forgot password?
@@ -56,7 +88,7 @@ const LoginScreen = () => {
             <Button
               theme={{roundness: 1}}
               mode="contained"
-              onPress={() => console.log('logging in')}>
+              onPress={handleLogin}>
               Login
             </Button>
           </Box>
