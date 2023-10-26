@@ -1,15 +1,20 @@
 import React from 'react';
-import {Appbar, useTheme} from 'react-native-paper';
+import {Appbar, AppbarActionProps, useTheme} from 'react-native-paper';
 import {useAppNavigation} from '../util';
-import {StatusBar, StyleSheet} from 'react-native';
+import {StatusBar} from 'react-native';
 import Text from './Text';
 
 interface AppBarProps {
-  title: string;
-  showMenu?: boolean;
+  title?: string;
+  hideBackAction?: boolean;
+  Actions?: [AppbarActionProps];
 }
 
-const AppBar: React.FC<AppBarProps> = ({title, showMenu}) => {
+const AppBar: React.FC<AppBarProps> = ({
+  title,
+  hideBackAction = false,
+  Actions,
+}) => {
   const {navigatePop} = useAppNavigation();
   const theme = useTheme();
 
@@ -17,9 +22,13 @@ const AppBar: React.FC<AppBarProps> = ({title, showMenu}) => {
     <>
       <StatusBar barStyle={theme.dark ? 'light-content' : 'dark-content'} />
       <Appbar.Header elevated mode="center-aligned" style={{height: 40}}>
-        <Appbar.BackAction onPress={() => navigatePop()} />
-        <Appbar.Content title={<Text variant="titleLarge">{title}</Text>} />
-        {showMenu && <Appbar.Action icon="dots-vertical" onPress={() => {}} />}
+        {!hideBackAction && <Appbar.BackAction onPress={() => navigatePop()} />}
+        {title && (
+          <Appbar.Content title={<Text variant="titleLarge">{title}</Text>} />
+        )}
+        {Actions &&
+          Actions.length > 0 &&
+          Actions.map((Action, i) => <Appbar.Action key={i} {...Action} />)}
       </Appbar.Header>
     </>
   );
