@@ -1,4 +1,8 @@
-import {UserDataProps, setUserData} from '../../storage/user.storage';
+import {
+  UserDataProps,
+  clearUserStorage,
+  setUserData,
+} from '../../storage/user.storage';
 
 interface LoginUserProps {
   userName: string;
@@ -20,3 +24,11 @@ export const loginUser =
       cb(true);
     } catch (err) {}
   };
+
+export const logoutUser = (cb: (success: boolean) => void) => async () => {
+  try {
+    clearUserStorage();
+
+    cb(true);
+  } catch (err) {}
+};

@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  CardStyleInterpolators,
-  createStackNavigator,
-} from '@react-navigation/stack';
+import {createStackNavigator} from '@react-navigation/stack';
 import LoginScreen from '../screens/auth/login';
 import RegisterScreen from '../screens/auth/register';
 import ForgotPasswordScreen from '../screens/auth/forgotpassword';
@@ -15,9 +12,6 @@ const AuthRoutes = () => {
       initialRouteName="auth.login.screen"
       screenOptions={{
         headerShown: false,
-        gestureEnabled: true,
-        gestureDirection: 'horizontal',
-        cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
       }}>
       <Stack.Screen name="auth.login.screen" component={LoginScreen} />
       <Stack.Screen name="auth.register.screen" component={RegisterScreen} />

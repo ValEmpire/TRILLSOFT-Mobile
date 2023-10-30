@@ -5,11 +5,12 @@ import AppBar from '../../../components/AppBar';
 import Layout from '../../../components/LayoutWrapper';
 import TextInputAvoidingView from '../../../components/TextAvoidingView';
 import AuthLogo from '../../../components/AuthLogo';
+import Text from '../../../components/Text';
 
 const ForgotPasswordScreen = () => {
   return (
     <TextInputAvoidingView>
-      <AppBar title="Forgot Password" />
+      <AppBar title={<Text variant="titleLarge">Forgot Password</Text>} />
 
       <Layout centerContent={true}>
         <Box width={270} alignSelf="center">

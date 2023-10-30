@@ -1,24 +1,20 @@
 import React from 'react';
-import {
-  CardStyleInterpolators,
-  createStackNavigator,
-} from '@react-navigation/stack';
 import HomeScreen from '../screens/app/home';
+import {createDrawerNavigator} from '@react-navigation/drawer';
+import DrawerMenus from '../components/Drawer';
 
 const AppRoutes = () => {
-  const Stack = createStackNavigator();
+  const Drawer = createDrawerNavigator();
 
   return (
-    <Stack.Navigator
+    <Drawer.Navigator
       initialRouteName="app.home.screen"
+      drawerContent={DrawerMenus}
       screenOptions={{
         headerShown: false,
-        gestureEnabled: true,
-        gestureDirection: 'horizontal',
-        cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
       }}>
-      <Stack.Screen name="app.home.screen" component={HomeScreen} />
-    </Stack.Navigator>
+      <Drawer.Screen name="app.home.screen" component={HomeScreen} />
+    </Drawer.Navigator>
   );
 };
 

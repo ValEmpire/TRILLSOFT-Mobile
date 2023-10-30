@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  CardStyleInterpolators,
-  createStackNavigator,
-} from '@react-navigation/stack';
+import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 import AuthRoutes from './Auth.routes';
 import AppRoutes from './App.routes';
@@ -14,15 +11,14 @@ interface NavigatorIndexProps {
 }
 
 const Routes: React.FC<NavigatorIndexProps> = ({token}) => {
+  const initialRoute = token ? 'app.routes' : 'auth.routes';
+
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName={token ? 'app.routes' : 'auth.routes'}
+        initialRouteName={initialRoute}
         screenOptions={{
           headerShown: false,
-          gestureEnabled: true,
-          gestureDirection: 'horizontal',
-          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
         }}>
         <Stack.Screen name="auth.routes" component={AuthRoutes} />
         <Stack.Screen name="app.routes" component={AppRoutes} />
