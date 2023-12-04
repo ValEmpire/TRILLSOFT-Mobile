@@ -38,8 +38,9 @@ export const isDarkModeActive = (): boolean => {
 
 export const toggleActiveTheme = (): void => {
   const isDarkMode = userStorage.getBoolean('isDarkMode') ?? false;
+  console.log(isDarkMode);
 
-  userStorage.set('activeTheme', !isDarkMode);
+  userStorage.set('isDarkMode', !isDarkMode);
 };
 
 export const clearUserStorage = (): void => {

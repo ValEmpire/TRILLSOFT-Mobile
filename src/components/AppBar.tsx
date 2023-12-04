@@ -35,11 +35,8 @@ const AppBar: React.FC<AppBarProps> = ({
       <Appbar.Header elevated mode={'center-aligned'} style={{height: 40}}>
         {!hideBackAction && <Appbar.BackAction onPress={() => navigatePop()} />}
 
-        {displayLogo && (
-          <Box pl={10} pr={10} ml={4} mr={4}>
-            <Image style={{height: 25, width: 25}} source={loginLogoImage} />
-          </Box>
-        )}
+        {userData && <Appbar.Action icon={'menu'} onPress={toggleDrawer} />}
+
         {displayLogo && <Appbar.Content title={''} />}
 
         {title && <Appbar.Content title={title} />}
@@ -51,7 +48,11 @@ const AppBar: React.FC<AppBarProps> = ({
           />
         )}
 
-        {userData && <Appbar.Action icon={'menu'} onPress={toggleDrawer} />}
+        {displayLogo && (
+          <Box pl={10} pr={10} ml={4} mr={4}>
+            <Image style={{height: 25, width: 25}} source={loginLogoImage} />
+          </Box>
+        )}
 
         {Actions &&
           Actions.length > 0 &&
